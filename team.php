@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Tanukings - Accueil</title>
+    <title>Tanukings - Team</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -115,13 +115,12 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Accueil</h1>
+                    <h1 class="page-header">Team</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
             <div>
-                <img src="../images/tanukings.png" width="50%" height="25%" alt="Tanukings" title="Quel beau logo"></img>
             </div>
             <!-- /.row -->
         </div>
