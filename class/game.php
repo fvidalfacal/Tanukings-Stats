@@ -31,7 +31,7 @@ class game {
 	function recupDatas()
 	{
 		// récupération des données globales de la game dans data 
-		$api_key  = 'de8111eb-c7ce-4efb-aeb9-89ee584ae60a' ;
+		$api_key  = 'api_key' ;
 
 		$url     = 'https://euw.api.pvp.net/api/lol/euw/v1.3/game/by-summoner/' . $this->sum_ID . '/recent?api_key=' . $api_key ;
 		$content = file_get_contents( $url );
@@ -75,9 +75,7 @@ class game {
 		$timeVal = date('H:i:s', $this->time);
 		$val = array ( $this->game_ID , $this->sum_ID , $this->champ_ID , $this->type , $this->victory , $this->kill ,	
 			$this->death , $this->assists , $timeVal , $this->cs , $this->pinkBought , $this->wardPlaced );
-		var_dump($val);
 		$res = Connexion::query($stmt,$val);
-		var_dump($res);
 		return $res ;
 	}
 
