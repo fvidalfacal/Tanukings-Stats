@@ -86,8 +86,8 @@ class game {
 
     function addGame() {
         // ajout de la game dans la base de données
-        $stmt = ' INSERT INTO `riot`.`game` (`game_ID`, `sum_ID`, `champ_ID`, `type`, `victory`, `kill`, `death`, `assist`, `time`, `cs`, `pinkBought`, `wardPlaced`) 
-			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ';
+        $stmt = 'INSERT INTO `vidalfacxqflool`.`game` (`game_ID`, `sum_ID`, `champ_ID`, `type`, `victory`, `kill`, `death`, `assist`, `time`, `cs`, `pinkBought`, `wardPlaced`) 
+			VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);';
         date_default_timezone_set('UTC');
         $timeVal = date('H:i:s', $this->time);
         $val = array($this->game_ID, $this->sum_ID, $this->champ_ID, $this->type, $this->victory, $this->kill,
@@ -99,9 +99,10 @@ class game {
     static function getInfo($idjoueur, $typeGame) {
         // on récup dans la base de données
         // param accepté `game_ID`, `sum_ID`, `champ_ID`, `type`, `victory`, `kill`, `death`, `assist`, `time`, `cs`, `pinkBought`, `wardPlaced` + nom du champion grace a son id(game.champ_ID)
-        $stmt = ' SELECT `type`, `victory`, `kill`, `death`, `assist`, `time`, `cs`, `pinkBought`, `wardPlaced` , `nom` FROM `game` , `champion` 
-			WHERE `game`.`champ_ID` = `champion`.`champ_ID` AND `type` = ? AND `sum_ID` = ? ';
-        $res = Connexion::table($stmt, array($idjoueur, $typeGame));
+        $stmt = ' SELECT `type`, `victory`, `kill`, `death`, `assist`, `time`, `cs`, `pinkBought`, `wardPlaced` , `champ_ID` 
+                FROM `game`
+		WHERE `type` = ? AND `sum_ID` = ? ';
+        $res = Connexion::table($stmt, array($typeGame,$idjoueur));
         return $res;
     }
 

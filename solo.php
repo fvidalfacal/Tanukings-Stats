@@ -1,3 +1,11 @@
+<?php
+
+include('class/game.php');
+include('class/summoner.php');
+include('class/champion.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
